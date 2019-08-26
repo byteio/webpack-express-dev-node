@@ -1,0 +1,5 @@
+- more tests
+- option to shut off preferred config
+    - add preferred config details to readme
+- options to set dev middleware and hot middleware parameters
+
