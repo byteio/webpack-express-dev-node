@@ -1,6 +1,6 @@
 {
   "name": "webpack-express-dev-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "webpack-compiled client & server hot-reloading in a single process",
   "main": "index.js",
   "repository": "https://github.com/byteio/webpack-express-dev-node",
@@ -43,8 +43,7 @@
     "build": "tsc"
   },
   "bin": {
-      "wedn": "./index.js",
-      "webpack-express-dev-node": "./index.js"
+    "wedn": "./index.js",
+    "webpack-express-dev-node": "./index.js"
   }
-
 }
