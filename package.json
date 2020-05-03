@@ -1,11 +1,19 @@
 {
   "name": "webpack-express-dev-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "webpack-compiled client & server hot-reloading in a single process",
   "main": "index.js",
   "repository": "https://github.com/byteio/webpack-express-dev-node",
   "author": "Leo Stanley",
-  "keywords": ["webpack", "ssr", "webpack-dev-middleware", "webpack-dev-server", "ts-node", "babel-node", "webpack-node"],
+  "keywords": [
+    "webpack",
+    "ssr",
+    "webpack-dev-middleware",
+    "webpack-dev-server",
+    "ts-node",
+    "babel-node",
+    "webpack-node"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.8.3",
