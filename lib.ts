@@ -289,23 +289,27 @@ export const runServer = (args: string[]) => {
     const hookedRequire = getHookedRequire(clientConfig);
     return new Promise((resolve) => {
         webpack(serverConfig, (err, { compilation }) => {
-            const { assets, errors } = compilation;
-            if (err) {
-                console.error(err);
-                return;
-            }
-            if (errors.length > 0) {
-                errors.forEach((err: Error) => {
+            try { 
+                const { assets, errors } = compilation;
+                if (err) {
                     console.error(err);
-                });
-                throw new Error('Could not compile server');
+                    return;
+                }
+                if (errors.length > 0) {
+                    errors.forEach((err: Error) => {
+                        console.error(err);
+                    });
+                    throw new Error('Could not compile server');
+                }
+                const serverCode = Object.keys(assets).reduce((src, assetKey) => (
+                    `${src}${assets[assetKey].source()}`
+                ), '');
+                const runServerCode = new Function('require', serverCode);
+                runServerCode(hookedRequire);
+                resolve();
+            } catch(err) {
+                console.error(err);
             }
-            const serverCode = Object.keys(assets).reduce((src, assetKey) => (
-                `${src}${assets[assetKey].source()}`
-            ), '');
-            const runServerCode = new Function('require', serverCode);
-            runServerCode(hookedRequire);
-            resolve();
         });
     });
 };
