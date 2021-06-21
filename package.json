@@ -1,6 +1,6 @@
 {
   "name": "webpack-express-dev-node",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "webpack-compiled client & server hot-reloading in a single process",
   "main": "index.js",
   "repository": "https://github.com/byteio/webpack-express-dev-node",
